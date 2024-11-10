@@ -8,9 +8,7 @@
 <h1 id="теория">Теория</h1>
 <h2 id="что-такое-sql">Что такое SQL</h2>
 <blockquote>
-<p><strong>SQL (Structured Query Language // Язык Структурированных Запросов)</strong> —<br>
-это язык программирования, предназначенный для управления и обработки<br>
-данных в реляционных базах данных.</p>
+<p><strong>SQL (Structured Query Language // Язык Структурированных Запросов)</strong> — это язык программирования, предназначенный для управления и обработки данных в реляционных базах данных.</p>
 </blockquote>
 <h2 id="преимущества">Преимущества</h2>
 <p>Преимущества SQL относительно стандартных решений обработки данных заключаются в том, что SQL позволяет обращаться к данным единым запросом, обладает реляционностью и высокой скоростью, благодарю скомпилированным запросам, строгой типизации и продвинутыми алгоритмами поиска и сортировки.</p>
@@ -292,9 +290,7 @@
 </ul>
 <h1 id="ограничители-в-sql">Ограничители в SQL</h1>
 <blockquote>
-<p><strong>Ограничители (constraints) в MySQL</strong> — помогают обеспечивать целостность<br>
-данных и устанавливают правила, которым значения в таблице должны<br>
-соответствовать.</p>
+<p><strong>Ограничители (constraints) в MySQL</strong> — помогают обеспечивать целостность данных и устанавливают правила, которым значения в таблице должны соответствовать.</p>
 </blockquote>
 <h2 id="основные-типы-ограничителей">Основные типы ограничителей</h2>
 <h3 id="primary-key"><code>PRIMARY KEY</code></h3>
@@ -409,10 +405,8 @@
 <h1 id="администрирование-таблицы-c-alter-table">Администрирование таблицы c <code>ALTER TABLE</code></h1>
 <h2 id="определение">Определение</h2>
 <blockquote>
-<p><strong><code>ALTER TABLE</code></strong> — используется для изменения структуры существующей таблицы в MySQL. С помощью <code>ALTER TABLE</code> можно добавлять, удалять или<br>
-изменять столбцы, устанавливать или удалять ограничения, а также<br>
-выполнять другие операции, меняющие структуру таблицы без<br>
-необходимости её удаления и повторного создания.</p>
+<p><strong><code>ALTER TABLE</code></strong> — используется для изменения структуры существующей таблицы в MySQL.<br>
+С помощью <code>ALTER TABLE</code> можно добавлять, удалять или изменять столбцы, устанавливать или удалять ограничения, а также выполнять другие операции, меняющие структуру таблицы без необходимости её удаления и повторного создания.</p>
 </blockquote>
 <h2 id="добавление-столбцов-add-column">Добавление столбцов (<code>ADD COLUMN</code>)</h2>
 <p>Чтобы добавить новый столбец в таблицу, используйте <code>ADD COLUMN</code>. Новый столбец добавляется в конец таблицы, если не указано иное.</p>
@@ -470,12 +464,7 @@ CHANGE <span class="token keyword">COLUMN</span> age user_age <span class="token
 <h1 id="представления-view-s">Представления (<code>VIEW-s</code>)</h1>
 <h2 id="определение-1">Определение</h2>
 <blockquote>
-<p><strong>VIEW</strong> (представление) — это виртуальная таблица в базе данных, которая формируется из результата выполнения SQL-запроса или же<br>
-заготовленный фильтр уже существующих данных. Представление может<br>
-включать данные из одной или нескольких таблиц. Оно предоставляет<br>
-доступ к данным без необходимости их дублирования и облегчает работу с<br>
-ними, так как вы можете выполнять запросы к представлению как к<br>
-обычной таблице.</p>
+<p><strong>VIEW</strong> (представление) — это виртуальная таблица в базе данных, которая формируется из результата выполнения SQL-запроса или же заготовленный фильтр уже существующих данных. Представление может включать данные из одной или нескольких таблиц. Оно предоставляет доступ к данным без необходимости их дублирования и облегчает работу с ними, так как вы можете выполнять запросы к представлению как к обычной таблице.</p>
 </blockquote>
 <h2 id="создание-представления">Создание представления</h2>
 <p>Для создания представления используется оператор <code>CREATE VIEW</code>.</p>
@@ -537,11 +526,8 @@ CHANGE <span class="token keyword">COLUMN</span> age user_age <span class="token
 <h1 id="cвязи-и-их-типы">Cвязи и их типы</h1>
 <h2 id="определение-2">Определение</h2>
 <blockquote>
-<p><strong>Реляционная база данных</strong> (РБД) — это система управления данными, где информация хранится в виде связанных таблиц. В таких таблицах<br>
-данные организованы в строки (записи) и столбцы (поля), что упрощает<br>
-их доступ и управление. Основной принцип РБД — это связь данных через<br>
-общие значения (например, идентификаторы(первичные ключи)),<br>
-позволяющая эффективно организовывать и искать информацию.</p>
+<p><strong>Реляционная база данных</strong> (РБД) — это система управления данными, где информация хранится в виде связанных таблиц. В таких таблицах данные организованы в строки (записи) и столбцы (поля), что упрощает<br>
+их доступ и управление. Основной принцип РБД — это связь данных через общие значения (например, идентификаторы(первичные ключи)), позволяющая эффективно организовывать и искать информацию.</p>
 </blockquote>
 <p>В реляционных базах данных связи между таблицами являются важным элементом для нормализации и организации данных. Связи описывают, как одна таблица соотносится с другой. В MySQL используются следующие основные типы связей:</p>
 <ul>
@@ -600,10 +586,7 @@ CHANGE <span class="token keyword">COLUMN</span> age user_age <span class="token
 <p>Предположим, у нас есть таблицы <code>students</code> и <code>courses</code>. Студенты могут записываться на несколько курсов, а курсы могут быть посещаемы несколькими студентами.</p>
 <p>Для реализации связи “многие ко многим” требуется третья таблица, которая будет содержать внешние ключи от обеих таблиц. Обязательным условием создания связи является создания композитного первичного ключа.</p>
 <blockquote>
-<p><strong>Композитный первичный ключ</strong> — составной первичный ключ создается, когда вы указываете несколько столбцов для создания одного первичного<br>
-ключа. В этом случае каждый отдельный столбец может содержать<br>
-повторяющиеся значения, но комбинация этих значений по всем столбцам<br>
-должна быть уникальной.</p>
+<p><strong>Композитный первичный ключ</strong> — составной первичный ключ создается, когда вы указываете несколько столбцов для создания одного первичного ключа. В этом случае каждый отдельный столбец может содержать повторяющиеся значения, но комбинация этих значений по всем столбцам должна быть уникальной.</p>
 </blockquote>
 <pre class=" language-sql"><code class="prism  language-sql"><span class="token comment">-- Таблица студентов</span>
 <span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> students <span class="token punctuation">(</span>
@@ -632,5 +615,383 @@ CHANGE <span class="token keyword">COLUMN</span> age user_age <span class="token
 <li>Курсы могут включать нескольких студентов.</li>
 <li>Связь осуществляется через таблицу <code>student_courses</code>, которая содержит внешние ключи <code>student_id</code> и <code>course_id</code>.</li>
 </ul>
-<p>Романенко Е.О. // НИТУ МИСИС</p>
+<h1 id="функции">Функции</h1>
+<h2 id="определение-3">Определение</h2>
+<blockquote>
+<p><strong>Функции в SQL</strong> — это встроенные или пользовательские методы, которые выполняют определенные операции с данными в базе данных. Функции позволяют модифицировать, агрегировать, проверять и преобразовывать данные, делая SQL-запросы более мощными и гибкими. В SQL функции работают с разными типами данных, такими как строки, числа и даты, и помогают выполнять задачи от простых вычислений до сложной обработки данных.</p>
+</blockquote>
+<h2 id="типы-функций">Типы функций</h2>
+<p>SQL функции делят на следующие категории:</p>
+<ul>
+<li><strong>Агрегатные функции</strong> — обрабатывают несколько строк и возвращают одно значение, например, <code>SUM()</code> для суммирования или <code>AVG()</code> для вычисления среднего.</li>
+<li><strong>Строковые функции</strong> — работают с текстом, например, <code>CONCAT()</code> для объединения строк или <code>UPPER()</code> для приведения текста к верхнему регистру.</li>
+<li><strong>Числовые функции</strong> — выполняют математические операции, такие как округление или нахождение абсолютного значения.</li>
+<li><strong>Функции работы с датами</strong> — позволяют управлять значениями даты и времени, например, <code>NOW()</code> для получения текущего времени.</li>
+<li><strong>Логические функции</strong> — помогают проверять условия и обрабатывать логические значения, такие как <code>IF()</code> и <code>CASE</code>.</li>
+</ul>
+<h2 id="агрегатные-функции">Агрегатные функции</h2>
+<p>Агрегатные функции обрабатывают наборы строк и возвращают одно значение для всего набора. Обычно используются с <code>GROUP BY</code>, чтобы сгруппировать данные перед агрегированием.</p>
+<ul>
+<li><strong><code>COUNT()</code></strong> — подсчитывает количество строк.</li>
+<li><strong><code>SUM()</code></strong> — вычисляет сумму значений в группе.</li>
+<li><strong><code>AVG()</code></strong> — вычисляет среднее значение.</li>
+<li><strong><code>MAX()</code></strong> и <strong><code>MIN()</code></strong> — возвращают максимальное и минимальное значение в группе.</li>
+</ul>
+<blockquote>
+<p>Полная таблица агрегатных функций MySQL представлена в <strong>Приложении</strong></p>
+</blockquote>
+<p>Пример:</p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token keyword">SELECT</span> <span class="token function">AVG</span><span class="token punctuation">(</span>balance<span class="token punctuation">)</span> <span class="token keyword">AS</span> avg_balance <span class="token keyword">FROM</span> users<span class="token punctuation">;</span>
+</code></pre>
+<p>В данном примере:</p>
+<ul>
+<li>Найдем средний <code>AVG()</code> баланс пользователя</li>
+<li>Назовем колонку с результатом как: <code>avg_balance</code></li>
+</ul>
+<h2 id="cтроковое-функции">Cтроковое функции</h2>
+<p>Строковые функции манипулируют строковыми данными, выполняя такие операции, как конкатенация, изменение регистра и поиск подстрок.</p>
+<ul>
+<li><strong><code>CONCAT()</code></strong> — объединяет несколько строк в одну.</li>
+<li><strong><code>LOWER()</code></strong> и <strong><code>UPPER()</code></strong> — преобразуют строку в нижний или верхний регистр.</li>
+<li><strong><code>SUBSTRING()</code></strong> — извлекает подстроку из строки.</li>
+<li><strong><code>LENGTH()</code></strong> — возвращает длину строки.</li>
+</ul>
+<blockquote>
+<p>Полная таблица строковых функций MySQL представлена в <strong>Приложении</strong></p>
+</blockquote>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token keyword">SELECT</span> <span class="token keyword">DISTINCT</span> LOWER<span class="token punctuation">(</span>name<span class="token punctuation">)</span> <span class="token keyword">AS</span> unique_names <span class="token keyword">FROM</span> users<span class="token punctuation">;</span>
+</code></pre>
+<p>В данном примере:</p>
+<ul>
+<li><code>LOWER</code> используется для приведения всех выведенных строк к нижнем регистру.</li>
+<li>Оператор <code>DISTINCT</code> для получения только уникальных значений.</li>
+</ul>
+<h1 id="приложение">Приложение</h1>
+<p>В данной разделе представлены дополнения к основным материалам методологического указания по MySQL.</p>
+<h2 id="таблица-агрегатных-функций-mysql">Таблица агрегатных функций MySQL</h2>
 
+<table>
+<thead>
+<tr>
+<th>Функция</th>
+<th>Описание</th>
+<th>Пример использования</th>
+<th>Результат</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><code>COUNT()</code></strong></td>
+<td>Возвращает количество строк в выборке, которые соответствуют указанным условиям.</td>
+<td><code>SELECT COUNT(*) FROM employees;</code></td>
+<td>Количество всех строк в таблице</td>
+</tr>
+<tr>
+<td><strong><code>SUM()</code></strong></td>
+<td>Возвращает сумму значений указанного столбца (обычно для числовых данных).</td>
+<td><code>SELECT SUM(salary) FROM employees;</code></td>
+<td>Сумма значений в столбце <code>salary</code></td>
+</tr>
+<tr>
+<td><strong><code>AVG()</code></strong></td>
+<td>Возвращает среднее значение указанного столбца.</td>
+<td><code>SELECT AVG(salary) FROM employees;</code></td>
+<td>Среднее значение <code>salary</code></td>
+</tr>
+<tr>
+<td><strong><code>MIN()</code></strong></td>
+<td>Возвращает минимальное значение в столбце.</td>
+<td><code>SELECT MIN(salary) FROM employees;</code></td>
+<td>Минимальное значение <code>salary</code></td>
+</tr>
+<tr>
+<td><strong><code>MAX()</code></strong></td>
+<td>Возвращает максимальное значение в столбце.</td>
+<td><code>SELECT MAX(salary) FROM employees;</code></td>
+<td>Максимальное значение <code>salary</code></td>
+</tr>
+<tr>
+<td><strong><code>GROUP_CONCAT()</code></strong></td>
+<td>Объединяет значения в группе строк в одну строку с указанием разделителя.</td>
+<td><code>SELECT GROUP_CONCAT(name) FROM employees;</code></td>
+<td>Конкатенация всех имен сотрудников</td>
+</tr>
+<tr>
+<td><strong><code>STDDEV()</code></strong></td>
+<td>Возвращает выборочное стандартное отклонение для значений в группе.</td>
+<td><code>SELECT STDDEV(salary) FROM employees;</code></td>
+<td>Стандартное отклонение <code>salary</code></td>
+</tr>
+<tr>
+<td><strong><code>STDDEV_SAMP()</code></strong></td>
+<td>Синоним для <code>STDDEV()</code>, возвращает стандартное отклонение выборки.</td>
+<td><code>SELECT STDDEV_SAMP(salary) FROM employees;</code></td>
+<td>Стандартное отклонение выборки <code>salary</code></td>
+</tr>
+<tr>
+<td><strong><code>STDDEV_POP()</code></strong></td>
+<td>Возвращает стандартное отклонение генеральной совокупности (популяции) для значений в группе.</td>
+<td><code>SELECT STDDEV_POP(salary) FROM employees;</code></td>
+<td>Стандартное отклонение генеральной совокупности</td>
+</tr>
+<tr>
+<td><strong><code>VARIANCE()</code></strong></td>
+<td>Возвращает выборочную дисперсию для значений в группе.</td>
+<td><code>SELECT VARIANCE(salary) FROM employees;</code></td>
+<td>Выборочная дисперсия <code>salary</code></td>
+</tr>
+<tr>
+<td><strong><code>VAR_SAMP()</code></strong></td>
+<td>Синоним для <code>VARIANCE()</code>, возвращает дисперсию выборки.</td>
+<td><code>SELECT VAR_SAMP(salary) FROM employees;</code></td>
+<td>Дисперсия выборки <code>salary</code></td>
+</tr>
+<tr>
+<td><strong><code>VAR_POP()</code></strong></td>
+<td>Возвращает дисперсию совокупности (популяции) для значений в группе.</td>
+<td><code>SELECT VAR_POP(salary) FROM employees;</code></td>
+<td>Дисперсия совокупности <code>salary</code></td>
+</tr>
+<tr>
+<td><strong><code>BIT_AND()</code></strong></td>
+<td>Выполняет побитовую операцию И для всех значений в группе.</td>
+<td><code>SELECT BIT_AND(flags) FROM employees;</code></td>
+<td>Результат побитового И для <code>flags</code></td>
+</tr>
+<tr>
+<td><strong><code>BIT_OR()</code></strong></td>
+<td>Выполняет побитовую операцию ИЛИ для всех значений в группе.</td>
+<td><code>SELECT BIT_OR(flags) FROM employees;</code></td>
+<td>Результат побитового ИЛИ для <code>flags</code></td>
+</tr>
+<tr>
+<td><strong><code>BIT_XOR()</code></strong></td>
+<td>Выполняет побитовую операцию XOR для всех значений в группе.</td>
+<td><code>SELECT BIT_XOR(flags) FROM employees;</code></td>
+<td>Результат побитового XOR для <code>flags</code></td>
+</tr>
+<tr>
+<td><strong><code>JSON_ARRAYAGG()</code></strong></td>
+<td>Возвращает JSON-массив, содержащий значения из группы.</td>
+<td><code>SELECT JSON_ARRAYAGG(name) FROM employees;</code></td>
+<td>JSON-массив имен сотрудников</td>
+</tr>
+<tr>
+<td><strong><code>JSON_OBJECTAGG()</code></strong></td>
+<td>Возвращает JSON-объект, где ключи и значения образуются из значений двух столбцов.</td>
+<td><code>SELECT JSON_OBJECTAGG(id, name) FROM employees;</code></td>
+<td>JSON-объект с <code>id</code> в качестве ключей и <code>name</code> в качестве значений</td>
+</tr>
+</tbody>
+</table><h2 id="таблица-строковых-функций-mysql">Таблица строковых функций MySQL</h2>
+
+<table>
+<thead>
+<tr>
+<th>Функция</th>
+<th>Описание</th>
+<th>Пример использования</th>
+<th>Результат</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><code>CONCAT()</code></strong></td>
+<td>Объединяет строки.</td>
+<td><code>CONCAT('Hello', ' ', 'World')</code></td>
+<td><code>'Hello World'</code></td>
+</tr>
+<tr>
+<td><strong><code>CONCAT_WS()</code></strong></td>
+<td>Объединяет строки с разделителем между ними.</td>
+<td><code>CONCAT_WS(', ', 'apple', 'banana')</code></td>
+<td><code>'apple, banana'</code></td>
+</tr>
+<tr>
+<td><strong><code>LOWER()</code></strong></td>
+<td>Преобразует строку в нижний регистр.</td>
+<td><code>LOWER('HELLO')</code></td>
+<td><code>'hello'</code></td>
+</tr>
+<tr>
+<td><strong><code>UPPER()</code></strong></td>
+<td>Преобразует строку в верхний регистр.</td>
+<td><code>UPPER('hello')</code></td>
+<td><code>'HELLO'</code></td>
+</tr>
+<tr>
+<td><strong><code>LENGTH()</code></strong></td>
+<td>Возвращает длину строки в байтах.</td>
+<td><code>LENGTH('Hello')</code></td>
+<td><code>5</code></td>
+</tr>
+<tr>
+<td><strong><code>CHAR_LENGTH()</code></strong></td>
+<td>Возвращает количество символов в строке.</td>
+<td><code>CHAR_LENGTH('Привет')</code></td>
+<td><code>6</code></td>
+</tr>
+<tr>
+<td><strong><code>SUBSTRING()</code></strong></td>
+<td>Извлекает подстроку из строки.</td>
+<td><code>SUBSTRING('Hello World', 1, 5)</code></td>
+<td><code>'Hello'</code></td>
+</tr>
+<tr>
+<td><strong><code>LEFT()</code></strong></td>
+<td>Возвращает указанное количество символов с начала строки.</td>
+<td><code>LEFT('Hello World', 5)</code></td>
+<td><code>'Hello'</code></td>
+</tr>
+<tr>
+<td><strong><code>RIGHT()</code></strong></td>
+<td>Возвращает указанное количество символов с конца строки.</td>
+<td><code>RIGHT('Hello World', 5)</code></td>
+<td><code>'World'</code></td>
+</tr>
+<tr>
+<td><strong><code>REVERSE()</code></strong></td>
+<td>Переворачивает строку задом наперед.</td>
+<td><code>REVERSE('Hello')</code></td>
+<td><code>'olleH'</code></td>
+</tr>
+<tr>
+<td><strong><code>TRIM()</code></strong></td>
+<td>Удаляет пробелы или указанные символы с начала и конца строки.</td>
+<td><code>TRIM(' Hello ')</code></td>
+<td><code>'Hello'</code></td>
+</tr>
+<tr>
+<td><strong><code>LTRIM()</code></strong></td>
+<td>Удаляет пробелы только слева от строки.</td>
+<td><code>LTRIM(' Hello')</code></td>
+<td><code>'Hello'</code></td>
+</tr>
+<tr>
+<td><strong><code>RTRIM()</code></strong></td>
+<td>Удаляет пробелы только справа от строки.</td>
+<td><code>RTRIM('Hello ')</code></td>
+<td><code>'Hello'</code></td>
+</tr>
+<tr>
+<td><strong><code>REPLACE()</code></strong></td>
+<td>Заменяет все вхождения подстроки в строке на другую подстроку.</td>
+<td><code>REPLACE('Hello World', 'World', 'MySQL')</code></td>
+<td><code>'Hello MySQL'</code></td>
+</tr>
+<tr>
+<td><strong><code>INSTR()</code></strong></td>
+<td>Возвращает позицию первого вхождения подстроки.</td>
+<td><code>INSTR('Hello World', 'World')</code></td>
+<td><code>7</code></td>
+</tr>
+<tr>
+<td><strong><code>LOCATE()</code></strong></td>
+<td>Похож на <code>INSTR()</code>, но с указанием начальной позиции.</td>
+<td><code>LOCATE('o', 'Hello World', 5)</code></td>
+<td><code>8</code></td>
+</tr>
+<tr>
+<td><strong><code>POSITION()</code></strong></td>
+<td>Возвращает позицию первого вхождения подстроки (синоним для <code>LOCATE()</code>).</td>
+<td><code>POSITION('World' IN 'Hello World')</code></td>
+<td><code>7</code></td>
+</tr>
+<tr>
+<td><strong><code>ASCII()</code></strong></td>
+<td>Возвращает ASCII-код первого символа строки.</td>
+<td><code>ASCII('A')</code></td>
+<td><code>65</code></td>
+</tr>
+<tr>
+<td><strong><code>CHAR()</code></strong></td>
+<td>Возвращает символы по их ASCII-кодам.</td>
+<td><code>CHAR(72, 101, 108, 108, 111)</code></td>
+<td><code>'Hello'</code></td>
+</tr>
+<tr>
+<td><strong><code>FORMAT()</code></strong></td>
+<td>Форматирует число с разделителем для тысяч и заданным количеством десятичных знаков.</td>
+<td><code>FORMAT(12345.6789, 2)</code></td>
+<td><code>'12,345.68'</code></td>
+</tr>
+<tr>
+<td><strong><code>LPAD()</code></strong></td>
+<td>Дополняет строку указанными символами слева до нужной длины.</td>
+<td><code>LPAD('123', 5, '0')</code></td>
+<td><code>'00123'</code></td>
+</tr>
+<tr>
+<td><strong><code>RPAD()</code></strong></td>
+<td>Дополняет строку указанными символами справа до нужной длины.</td>
+<td><code>RPAD('123', 5, '0')</code></td>
+<td><code>'12300'</code></td>
+</tr>
+<tr>
+<td><strong><code>ELT()</code></strong></td>
+<td>Возвращает элемент из списка строк по заданному индексу.</td>
+<td><code>ELT(2, 'apple', 'banana', 'cherry')</code></td>
+<td><code>'banana'</code></td>
+</tr>
+<tr>
+<td><strong><code>FIELD()</code></strong></td>
+<td>Возвращает позицию указанного элемента в списке.</td>
+<td><code>FIELD('banana', 'apple', 'banana', 'cherry')</code></td>
+<td><code>2</code></td>
+</tr>
+<tr>
+<td><strong><code>FIND_IN_SET()</code></strong></td>
+<td>Возвращает позицию строки в списке значений, разделенных запятыми.</td>
+<td><code>FIND_IN_SET('b', 'a,b,c')</code></td>
+<td><code>2</code></td>
+</tr>
+<tr>
+<td><strong><code>MAKE_SET()</code></strong></td>
+<td>Возвращает строку с элементами из списка, соответствующими установленным битам числа.</td>
+<td><code>MAKE_SET(5, 'a', 'b', 'c')</code></td>
+<td><code>'a,c'</code></td>
+</tr>
+<tr>
+<td><strong><code>SPACE()</code></strong></td>
+<td>Возвращает строку, состоящую из заданного количества пробелов.</td>
+<td><code>SPACE(5)</code></td>
+<td><code>' '</code> (5 пробелов)</td>
+</tr>
+<tr>
+<td><strong><code>QUOTE()</code></strong></td>
+<td>Возвращает строку, заключенную в одинарные кавычки и экранирующую специальные символы.</td>
+<td><code>QUOTE("Hello 'World'")</code></td>
+<td><code>"'Hello \'World\''"</code></td>
+</tr>
+<tr>
+<td><strong><code>SUBSTRING_INDEX()</code></strong></td>
+<td>Возвращает часть строки до указанного количества вхождений символа-разделителя.</td>
+<td><code>SUBSTRING_INDEX('www.example.com', '.', 2)</code></td>
+<td><code>'www.example'</code></td>
+</tr>
+<tr>
+<td><strong><code>INSERT()</code></strong></td>
+<td>Вставляет подстроку в указанную позицию в строке, заменяя определенное количество символов.</td>
+<td><code>INSERT('Hello World', 7, 5, 'MySQL')</code></td>
+<td><code>'Hello MySQL'</code></td>
+</tr>
+<tr>
+<td><strong><code>REPEAT()</code></strong></td>
+<td>Повторяет строку указанное количество раз.</td>
+<td><code>REPEAT('abc', 3)</code></td>
+<td><code>'abcabcabc'</code></td>
+</tr>
+<tr>
+<td><strong><code>HEX()</code></strong></td>
+<td>Преобразует строку в шестнадцатеричное значение.</td>
+<td><code>HEX('A')</code></td>
+<td><code>'41'</code></td>
+</tr>
+<tr>
+<td><strong><code>UNHEX()</code></strong></td>
+<td>Преобразует шестнадцатеричное значение обратно в строку.</td>
+<td><code>UNHEX('41')</code></td>
+<td><code>'A'</code></td>
+</tr>
+</tbody>
+</table>
