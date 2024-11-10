@@ -284,4 +284,84 @@
 <li><strong>Типы <code>BLOB</code> и <code>TEXT</code></strong>: Эти типы данных имеют большие ограничения на объем хранимых данных, что может вызвать проблемы с производительностью при использовании их в больших объемах.</li>
 <li><strong>Типы данных для даты и времени</strong>: Используйте <code>TIMESTAMP</code>, если важна временная метка с учетом временной зоны. Для постоянных дат лучше подойдет <code>DATETIME</code>.</li>
 </ul>
+<h2 id="ограничители-в-mysql">Ограничители в MySQL</h2>
+<p>Ограничители (constraints) в MySQL помогают обеспечивать целостность данных и устанавливают правила, которым значения в таблице должны соответствовать.</p>
+<h3 id="основные-типы-ограничителей">Основные типы ограничителей</h3>
+<h4 id="primary-key"><code>PRIMARY KEY</code></h4>
+<p>Ограничитель <code>PRIMARY KEY</code> уникально идентифицирует каждую запись в таблице и объединяет свойства <code>UNIQUE</code> и <code>NOT NULL</code>. Таблица может иметь только один первичный ключ, который может состоять из одного или нескольких столбцов.</p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> users <span class="token punctuation">(</span>
+    id <span class="token keyword">INT</span> <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span><span class="token punctuation">,</span>
+    username <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Альтернативная запись:</p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> users <span class="token punctuation">(</span>
+    id <span class="token keyword">INT</span><span class="token punctuation">,</span>
+    username <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span>
+    <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h4 id="not-null"><code>NOT NULL</code></h4>
+<p>Ограничитель <code>NOT NULL</code> не позволяет столбцу принимать значение <code>NULL</code>. Это означает, что поле всегда должно содержать данные, и вставка или обновление записи без значения в этом поле вызовет ошибку.</p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> users <span class="token punctuation">(</span>
+    id <span class="token keyword">INT</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+    username <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h4 id="unique"><code>UNIQUE</code></h4>
+<p>Ограничитель <code>UNIQUE</code> обеспечивает уникальность значений в одном или нескольких столбцах, предотвращая дублирование данных. Можно задать <code>UNIQUE</code> на один столбец или комбинацию нескольких столбцов для уникальности по ним.</p>
+<p>Для одного столбца</p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> users <span class="token punctuation">(</span>
+    id <span class="token keyword">INT</span><span class="token punctuation">,</span>
+    email <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span> <span class="token keyword">UNIQUE</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Для нескольких столбцов</p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> users <span class="token punctuation">(</span>
+    id <span class="token keyword">INT</span><span class="token punctuation">,</span>
+    first_name <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    last_name <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token keyword">UNIQUE</span> <span class="token punctuation">(</span>first_name<span class="token punctuation">,</span> last_name<span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h4 id="композитные-ключи-составные-primary-key-и-unique">Композитные ключи (составные <code>PRIMARY KEY</code> и <code>UNIQUE</code>)</h4>
+<p>Композитный (или составной) ключ используется для уникальности комбинации значений двух или более столбцов. Композитный <code>PRIMARY KEY</code> действует как уникальный идентификатор на уровне всей комбинации значений. Является обязательный условием реализации внешней связи Many-to-Many.</p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> orders <span class="token punctuation">(</span>
+    order_id <span class="token keyword">INT</span><span class="token punctuation">,</span>
+    product_id <span class="token keyword">INT</span><span class="token punctuation">,</span>
+    <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span>order_id<span class="token punctuation">,</span> product_id<span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h4 id="foreign-key"><code>FOREIGN KEY</code></h4>
+<p>Ограничитель <code>FOREIGN KEY</code> создает связь между таблицами и обеспечивает целостность данных, ограничивая возможные значения ссылками на первичный ключ другой таблицы. Этот тип ограничителя особенно полезен при работе с реляционными данными.</p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> orders <span class="token punctuation">(</span>
+    order_id <span class="token keyword">INT</span> <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span><span class="token punctuation">,</span>
+    user_id <span class="token keyword">INT</span><span class="token punctuation">,</span>
+    <span class="token keyword">FOREIGN</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span>user_id<span class="token punctuation">)</span> <span class="token keyword">REFERENCES</span> users<span class="token punctuation">(</span>id<span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p><code>FOREIGN KEY</code> также поддерживает действия <code>ON DELETE</code> и <code>ON UPDATE</code>, такие как <code>CASCADE</code>, что позволяет автоматически удалять или обновлять связанные записи при изменении данных в таблице-родителе.</p>
+<h4 id="check"><code>CHECK</code></h4>
+<p>Ограничитель <code>CHECK</code> позволяет задавать условие, которому должны соответствовать значения в столбце. Например, <code>CHECK</code> может ограничить диапазон значений или задать конкретные допустимые значения.</p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> products <span class="token punctuation">(</span>
+    id <span class="token keyword">INT</span> <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span><span class="token punctuation">,</span>
+    price <span class="token keyword">DECIMAL</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token keyword">CHECK</span> <span class="token punctuation">(</span>price <span class="token operator">&gt;=</span> <span class="token number">0</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h4 id="default"><code>DEFAULT</code></h4>
+<p>Ограничитель <code>DEFAULT</code> определяет значение по умолчанию для столбца, если при вставке записи значение в этом столбце не указано. Это позволяет упростить структуру записей, когда одно и то же значение применяется часто.</p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> users <span class="token punctuation">(</span>
+    id <span class="token keyword">INT</span> <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span><span class="token punctuation">,</span>
+    is_active <span class="token keyword">TINYINT</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">DEFAULT</span> <span class="token number">1</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h4 id="auto_increment"><code>AUTO_INCREMENT</code></h4>
+<p>Ограничитель <code>AUTO_INCREMENT</code> автоматически увеличивает значение столбца для каждой новой записи. Чаще всего используется для создания уникальных идентификаторов (ID).</p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> users <span class="token punctuation">(</span>
+    id <span class="token keyword">INT</span> <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span> <span class="token keyword">AUTO_INCREMENT</span><span class="token punctuation">,</span>
+    username <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h4 id="unsigned"><code>UNSIGNED</code></h4>
+<p>Ограничитель <code>UNSIGNED</code> применяется к числовым столбцам и запрещает использование отрицательных значений или же . <code>UNSIGNED</code> полезен, когда необходимо увеличить максимальный диапазон положительных чисел в столбце.</p>
 
